@@ -10,8 +10,10 @@
   <script src="https://unpkg.com/d3-dag@0.8.2"></script>
   <script src="https://unpkg.com/@hpcc-js/wasm@0.3.11/dist/index.min.js"></script>
   <script src="https://unpkg.com/d3-graphviz@3.0.5/build/d3-graphviz.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>  
   <script type="text/javascript" src="plotROBDD.js"></script>
   <script type="text/javascript" src="plotFTE.js"></script>
+  <script type="text/javascript" src="backend.js"></script>
 </head>
 
 <body>
@@ -19,8 +21,8 @@
     <a class="active" href="#info">Info</a>
     <div class="input-container">
       <form action="">
-        <input type="text" placeholder="Enter propositional formula" name="input">
-        <button type="submit">Generate</button>
+        <input type="text" placeholder="Enter propositional formula" name="input" id="formulainput">
+        <button type="submit" onClick="doPost(event)">Generate</button>
       </form>
     </div>
   </div>
