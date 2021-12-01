@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "d3-graphviz": "^4.0.0",
+    "graphviz": "^0.0.9"
+  }
+}
