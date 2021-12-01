@@ -1,4 +1,5 @@
 (async () => {
+
   // fetch data and render
   const resp = await fetch(
     "https://raw.githubusercontent.com/erikbrinkman/d3-dag/main/examples/grafo.json"
@@ -67,7 +68,6 @@
       toadd.push(robdd.AllNodes[i].Hi)
     }
   }
-
   const dag = d3.dagStratify()(nodelist);
   const nodeRadius = 4;
   const layout = d3
