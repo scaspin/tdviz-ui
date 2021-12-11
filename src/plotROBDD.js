@@ -1,13 +1,10 @@
-(async () => {
-
+async function generateROBDD (robdd) {
   // fetch data and render
   const resp = await fetch(
     "https://raw.githubusercontent.com/erikbrinkman/d3-dag/main/examples/grafo.json"
   );
   const data = await resp.json();
 
-  robdd = {"Root":9,"Order":{"p":0,"p'":1,"q":2,"q'":3},"ReverseOrder":{"0":"p","1":"p'","2":"q","3":"q'"},"Cache":{"-1-10":1,"-2-20":0,"001":2,"003":4,"016":7,"018":9,"101":5,"161":8,"201":3,"210":6},"AllNodes":[{"Prop":-2,"Lo":-2,"Hi":0},{"Prop":-1,"Lo":-1,"Hi":0},{"Prop":0,"Lo":0,"Hi":1},{"Prop":2,"Lo":0,"Hi":1},{"Prop":0,"Lo":0,"Hi":3},{"Prop":1,"Lo":0,"Hi":1},{"Prop":2,"Lo":1,"Hi":0},{"Prop":0,"Lo":1,"Hi":6},{"Prop":1,"Lo":6,"Hi":1},{"Prop":0,"Lo":1,"Hi":8}]}
-  
   toadd = [robdd.Root]
   added = [0,1]
 
@@ -43,7 +40,8 @@
   }
 
   digraph = digraph.concat("}")
-  d3.select("#svg1").graphviz().renderDot(digraph);
+  d3.select("#svg1").selectAll("*").remove()
+  d3.select("#svg1").append('svg').graphviz().renderDot(digraph);
 
-})();
+}
 
